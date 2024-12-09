@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wildis Nabut</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- AOS-->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white">
+    <!-- Navbar -->
+    <header
+      x-data="{ scrolled: false }"
+      x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 10 })"
+      :class="scrolled ? 'bg-white dark:bg-gray-800 dark:bg-opacity-80  bg-opacity-80 shadow-md border-b' : 'bg-transparent'"
+      class="fixed top-0 w-full transition-all duration-300 z-50"
+    >
+      <div class="container mx-auto px-4 flex justify-between items-center h-16">
+        <h1 class="text-2xl font-mono font-bold dark:text-white">Wil<span class="text-orange-600">dis</span></h1>
+        <nav class="hidden md:flex space-x-6 dark:text-white">
+          <a href="#home" class="menu hover:text-blue-500">Home</a>
+          <a href="#about" class="menu hover:text-blue-500">Tentang</a>
+          <a href="#gallery" class="menu hover:text-blue-500">Gallery</a>
+          <!-- Tombol Toggle Dark Mode -->
+          <button id="darkModeToggle" onclick="toggleDarkMode()" class="text-orange-400 p-1 rounded-full border-2 border-gray-500">
+            <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+            </svg>
+
+            <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" class="hidden h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M10 1.25a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75zM10 15.25a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75zM3.221 4.471a.75.75 0 011.06 0l1.06 1.06a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM14.659 15.909a.75.75 0 011.06 0l1.06 1.06a.75.75 0 11-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM1.25 10a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5A.75.75 0 011.25 10zM15.25 10a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5a.75.75 0 01-.75-.75zM3.221 15.909a.75.75 0 011.06 0l1.06 1.06a.75.75 0 11-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM14.659 4.471a.75.75 0 011.06 0l1.06 1.06a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM10 5a5 5 0 100 10A5 5 0 0010 5z"
+              />
+            </svg>
+          </button>
+        </nav>
+        <!-- Hamburger Menu -->
+        <div x-data="{ open: false }" class="md:hidden">
+          <!-- Tombol Toggle Dark Mode -->
+          <!-- Tombol Toggle Dark Mode -->
+          <button id="darkModeToggle" onclick="toggleDarkMode()" class="text-orange-400 dark:text-white p-1 rounded-full border-2 border-orange-400 dark:border-white relative">
+            <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+            </svg>
+            <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" class="hidden h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M10 1.25a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75zM10 15.25a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75zM3.221 4.471a.75.75 0 011.06 0l1.06 1.06a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM14.659 15.909a.75.75 0 011.06 0l1.06 1.06a.75.75 0 11-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM1.25 10a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5A.75.75 0 011.25 10zM15.25 10a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5a.75.75 0 01-.75-.75zM3.221 15.909a.75.75 0 011.06 0l1.06 1.06a.75.75 0 11-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM14.659 4.471a.75.75 0 011.06 0l1.06 1.06a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM10 5a5 5 0 100 10A5 5 0 0010 5z"
+              />
+            </svg>
+
+            <!-- Tooltip -->
+            <div class="absolute hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 bottom-full mb-2 left-1/2 transform -translate-x-1/2">Ubah Mode</div>
+          </button>
+
+          <button @click="open = !open" class="text-2xl focus:outline-none dark:text-white">☰</button>
+          <div
+            x-show="open"
+            @click.away="open = false"
+            x-transition:enter="transition transform duration-300"
+            x-transition:enter-start="-translate-x-full opacity-0"
+            x-transition:enter-end="translate-x-0 opacity-100"
+            x-transition:leave="transition transform duration-300"
+            x-transition:leave-start="translate-x-0 opacity-100"
+            x-transition:leave-end="-translate-x-full opacity-0"
+            class="fixed inset-y-0 left-0 w-1/2 h-full bg-cover bg-center bg-opacity-60 shadow-lg flex flex-col space-y-4 p-6 text-white lg:text-2xl"
+            style="background-image: url('/src/img/3.avif')"
+          >
+            <button
+              @click="open = false"
+              type="button"
+              data-drawer-hide="drawer-navigation"
+              aria-controls="drawer-navigation"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
+            >
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+              </svg>
+              <span class="sr-only">Close menu</span>
+            </button>
+            <button class="relative w-20 h-20 mx-auto">
+              <img src="/src/img/eko.png" alt="Profile Picture" class="rounded-full w-full h-full object-cover hover:shadow-2xl transition-shadow duration-300 border-2 border-white relative left-1/2 transform -translate-x-1/2" />
+            </button>
+            <a href="#home" @click="open = false" class="hover:text-blue-500 hover:bg-orange-300 rounded-lg p-2 font-serif text-center">Home</a>
+            <a href="#about" @click="open = false" class="hover:text-blue-500 hover:bg-orange-300 rounded-lg py-2 font-serif text-center">Tentang</a>
+            <a href="#gallery" @click="open = false" class="hover:text-blue-500 hover:bg-orange-300 rounded-lg p-2 font-serif text-center">Gallery</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-blue-500 text-gray-800 py-20 text-center overflow-hidden">
+      <!-- Background Image -->
+      <div id="background" class="absolute inset-0 z-0 bg-cover bg-center opacity-50 transition-opacity duration-1000" style="background-image: url('/src/img/5.avif')"></div>
+      <!-- Content -->
+      <div class="relative z-10 text-white dark:text-cyan-950">
+        <h2 class="text-xl font-bold mt-6">"kukira kelapa ternyata kolang kaling</h2>
+        <h2 class="text-xl font-bold">kukira kenapa ternyata udah asing"</h2>
+        <span class="w-[100px] h-[2px] block bg-black mx-auto mt-2"></span>
+      </div>
+    </section>
+
+    <section class="relative mx-2">
+      <div class="flex items-center bg-orange-500 text-white px-4 py-2 rounded-lg -mt-11">
+        <!-- Icon -->
+        <img src="/src/img/eko.png" alt="icon" class="w-16 h-16 mr-2 rounded-full" />
+        <span class="font-semibold px-2">
+          <div class="text-left font-bold text-2xl font-dancing">WILDIS EKO Y NABUT</div>
+          <div class="text-left font-semibold font-handwriting">ilmu komputer undana</div>
+          <div class="text-left">
+            <div class="flex space-x-4">
+              <!-- GitHub -->
+              <a href="https://github.com/WildisNabut" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
+                <i class="fab fa-github"></i>
+              </a>
+              <!-- Facebook -->
+              <a href="https://facebook.com/wildisnabut24" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <!-- WhatsApp -->
+              <a href="https://wa.me/6281316627877" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <!-- Instagram -->
+              <a href="https://instagram.com/wildisnabut" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <!-- TikTok -->
+              <a href="https://www.tiktok.com/@winabut?_t=8qcbswm0yxQ&_r=1" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+        </span>
+      </div>
+    </section>
+
+    <section class="bg-gray-100 flex items-center justify-center pt-20 dark:bg-slate-800">
+      <div class="flex flex-col md:flex-row items-center md:items-start max-w-4xl overflow-hidden">
+        <!-- Bagian Teks -->
+        <div class="p-6 md:w-3/4">
+          <h1 class="text-3xl font-bold text-orange-500 mb-4" data-aos="fade-right" data-aos-duration="2000">Hai, saya Wildis.</h1>
+          <p class="text-gray-700 mb-4 text-justify font-dancing dark:text-white" data-aos="fade-down" data-aos-duration="2000">
+            Saya lahir pada tahun 2003 dan saat ini sedang menempuh pendidikan di Universitas Nusa Cendana dengan jurusan Ilmu Komputer. Di kampus, saya terus mengasah keterampilan teknis saya dan berusaha mempelajari berbagai bidang dalam
+            ilmu komputer, seperti pengembangan perangkat lunak dan kecerdasan buatan.
+          </p>
+          <p class="text-gray-700 font-semibold dark:text-white" data-aos="fade-right" data-aos-duration="2000">Mari jelajahi apa yang bisa menjadi pelajaran</p>
+        </div>
+
+        <!-- Bagian Gambar -->
+        <div class="md:w-1/2 rounded-t-full overflow-hidden border-2 border-black lg:rounded-br-full dark:border-white">
+          <img src="/src/img/eko.png" alt="Tim bekerja" class="w-full h-full object-cover" data-aos="fade-up" data-aos-duration="2000" />
+        </div>
+      </div>
+    </section>
+
+    <!-- galery -->
+    <section class="bg-gray-100 dark:bg-gray-800 py-20 px-6 dark:text-white">
+      <h2 class="text-3xl font-bold text-center mb-6">Gallery</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="grid gap-4">
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/eko.png" alt="" data-aos="fade-right" data-aos-duration="2000" />
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/2.jpg" alt="" data-aos="fade-right" data-aos-duration="2000" />
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/9.jpg" alt="" data-aos="fade-right" data-aos-duration="2000" />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/3.jpg" alt="" data-aos="fade-left" data-aos-duration="2000" />
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/4.png" alt="" data-aos="fade-left" data-aos-duration="2000" />
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/5.jpg" alt="" data-aos="fade-left" data-aos-duration="2000" />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/6.jpg" alt="" data-aos="fade-up" data-aos-duration="2000" />
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/7.jpg" alt="" data-aos="fade-up" data-aos-duration="2000" />
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/8.jpg" alt="" data-aos="fade-uo" data-aos-duration="2000" />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/9.jpg" alt="" data-aos="fade-up" data-aos-duration="2000" />
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/10.jpg" alt="" data-aos="fade-up" data-aos-duration="2000" />
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="/src/img/11.jpg" alt="" data-aos="fade-up" data-aos-duration="2000" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="dark:bg-gray-800 dark:fill-black">
+      <path
+        fill="#3b82f6"
+        fill-opacity="1"
+        d="M0,192L48,186.7C96,181,192,171,288,154.7C384,139,480,117,576,101.3C672,85,768,75,864,90.7C960,107,1056,149,1152,154.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path>
+    </svg>
+
+    <footer class="bg-blue-500 text-white text-center mt-0">
+      <section class="max-w-screen-xl mx-auto px-4">
+        <!-- Grid untuk 3 kolom -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Kolom 1: Ikon Media Sosial -->
+          <div class="flex flex-col items-center space-y-4">
+            <h2 class="text-lg font-bold">Media Sosial</h2>
+            <span class="w-8 h-[2px] block bg-black justify-center"></span>
+            <div class="flex space-x-4">
+              <!-- GitHub -->
+              <a href="https://github.com/WildisNabut" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800 h-10 w-10">
+                <i class="fab fa-github h-10 w-10"></i>
+              </a>
+              <!-- Facebook -->
+              <a href="https://facebook.com/wildisnabut24" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <!-- WhatsApp -->
+              <a href="https://wa.me/6281316627877" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <!-- Instagram -->
+              <a href="https://instagram.com/wildisnabut" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <!-- TikTok -->
+              <a href="https://www.tiktok.com/@winabut?_t=8qcbswm0yxQ&_r=1" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Kolom 2: Kontak -->
+          <div class="flex flex-col items-center space-y-4">
+            <h2 class="text-lg font-bold">Kontak</h2>
+            <span class="w-8 h-[2px] block bg-black justify-center"></span>
+            <form id="whatsappForm" class="max-w-sm w-full">
+              <div class="flex my-2 mx-4">
+                <input type="text" id="name" class="rounded-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-900" placeholder="Masukan Nama" required />
+              </div>
+              <div class="flex my-2 mx-4">
+                <input type="email" id="email" class="rounded-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-900" placeholder="Masukan Email" required />
+              </div>
+              <div class="flex my-2 mx-4">
+                <textarea id="message" rows="4" class="block p-2.5 w-full text-gray-900 bg-gray-50 rounded-lg border focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900" placeholder="Masukan pesan..." required></textarea>
+              </div>
+              <div class="mx-4">
+                <button type="submit" id="sendBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-900">
+                  Kirim ke WhatsApp
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Kolom 3: Peta -->
+          <div class="flex flex-col items-center space-y-4">
+            <h2 class="text-lg font-bold">Peta</h2>
+            <span class="w-8 h-[2px] block bg-black justify-center"></span>
+            <div class="w-full">
+              <iframe
+                class="w-full h-60"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d490.92624939561006!2d123.65328289568424!3d-10.147289796788154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c56830e84a1d109%3A0x63227258a7812ada!2sKos%20Asty%20Monitor%20Oesapa!5e0!3m2!1sid!2sid!4v1733678509179!5m2!1sid!2sid"
+                frameborder="0"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <span class="w-full h-[1px] block bg-white mx-auto dark:bg-white mt-10"></span>
+      <p>© 2024 Wildis Nabut. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript AOS -->
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

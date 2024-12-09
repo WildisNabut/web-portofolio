@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Dancing Script", cursive;
+}
+.transition-opacity {
+  transition: opacity 1s ease-in-out;
+}
+
+/* Tailwind CSS custom animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Animasi garis bawah bergerak dari tengah */
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #3b82f6; /* Warna biru */
+  transition: all 0.3s ease-in-out;
+}
+
+.menu:hover::before {
+  left: 0;
+  width: 100%;
+}
