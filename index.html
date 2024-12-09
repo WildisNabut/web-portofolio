@@ -22,9 +22,9 @@
       <div class="container mx-auto px-4 flex justify-between items-center h-16">
         <h1 class="text-2xl font-mono font-bold dark:text-white">Wil<span class="text-orange-600">dis</span></h1>
         <nav class="hidden md:flex space-x-6 dark:text-white">
-          <a href="#home" class="menu hover:text-blue-500">Home</a>
-          <a href="#about" class="menu hover:text-blue-500">Tentang</a>
-          <a href="#gallery" class="menu hover:text-blue-500">Gallery</a>
+          <a href="#home" class="menu hover:text-orange-500">Home</a>
+          <a href="#about" class="menu hover:text-orange-500">Tentang</a>
+          <a href="#gallery" class="menu hover:text-orange-500">Gallery</a>
           <!-- Tombol Toggle Dark Mode -->
           <button id="darkModeToggle" onclick="toggleDarkMode()" class="text-orange-400 p-1 rounded-full border-2 border-gray-500">
             <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -67,7 +67,7 @@
             x-transition:leave-start="translate-x-0 opacity-100"
             x-transition:leave-end="-translate-x-full opacity-0"
             class="fixed inset-y-0 left-0 w-1/2 h-full bg-cover bg-center bg-opacity-60 shadow-lg flex flex-col space-y-4 p-6 text-white lg:text-2xl"
-            style="background-image: url('/src/img/3.avif')"
+            style="background-image: url('img/3.avif')"
           >
             <button
               @click="open = false"
@@ -82,7 +82,7 @@
               <span class="sr-only">Close menu</span>
             </button>
             <button class="relative w-20 h-20 mx-auto">
-              <img src="/src/img/eko.png" alt="Profile Picture" class="rounded-full w-full h-full object-cover hover:shadow-2xl transition-shadow duration-300 border-2 border-white relative left-1/2 transform -translate-x-1/2" />
+              <img src="img/eko.png" alt="Profile Picture" class="rounded-full w-full h-full object-cover hover:shadow-2xl transition-shadow duration-300 border-2 border-white relative left-1/2 transform -translate-x-1/2" />
             </button>
             <a href="#home" @click="open = false" class="hover:text-blue-500 hover:bg-orange-300 rounded-lg p-2 font-serif text-center">Home</a>
             <a href="#about" @click="open = false" class="hover:text-blue-500 hover:bg-orange-300 rounded-lg py-2 font-serif text-center">Tentang</a>
@@ -95,7 +95,7 @@
     <!-- Hero Section -->
     <section id="hero" class="relative bg-blue-500 text-gray-800 py-20 text-center overflow-hidden">
       <!-- Background Image -->
-      <div id="background" class="absolute inset-0 z-0 bg-cover bg-center opacity-50 transition-opacity duration-1000" style="background-image: url('/src/img/5.avif')"></div>
+      <div id="background" class="absolute inset-0 z-0 bg-cover bg-center opacity-50 transition-opacity duration-1000" style="background-image: url('img/5.avif')"></div>
       <!-- Content -->
       <div class="relative z-10 text-white dark:text-cyan-950">
         <h2 class="text-xl font-bold mt-6">"kukira kelapa ternyata kolang kaling</h2>
@@ -164,24 +164,24 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="grid gap-4">
           <div>
-            <img class="h-auto max-w-full rounded-lg" src="img/eko.png" alt="" data-aos="fade-right" data-aos-duration="2000" />
+            <img class="h-auto max-w-full rounded-lg" src="img/eko.png" alt="" data-aos="fade-up" data-aos-duration="2000" />
           </div>
           <div>
-            <img class="h-auto max-w-full rounded-lg" src="img/2.jpg" alt="" data-aos="fade-right" data-aos-duration="2000" />
+            <img class="h-auto max-w-full rounded-lg" src="img/2.jpg" alt="" data-aos="fade-up" data-aos-duration="2000" />
           </div>
           <div>
-            <img class="h-auto max-w-full rounded-lg" src="img/9.jpg" alt="" data-aos="fade-right" data-aos-duration="2000" />
+            <img class="h-auto max-w-full rounded-lg" src="img/9.jpg" alt="" data-aos="fade-up" data-aos-duration="2000" />
           </div>
         </div>
         <div class="grid gap-4">
           <div>
-            <img class="h-auto max-w-full rounded-lg" src="img/3.jpg" alt="" data-aos="fade-left" data-aos-duration="2000" />
+            <img class="h-auto max-w-full rounded-lg" src="img/3.jpg" alt="" data-aos="fade-up" data-aos-duration="2000" />
           </div>
           <div>
-            <img class="h-auto max-w-full rounded-lg" src="img/4.png" alt="" data-aos="fade-left" data-aos-duration="2000" />
+            <img class="h-auto max-w-full rounded-lg" src="img/4.png" alt="" data-aos="fade-up" data-aos-duration="2000" />
           </div>
           <div>
-            <img class="h-auto max-w-full rounded-lg" src="img/5.jpg" alt="" data-aos="fade-left" data-aos-duration="2000" />
+            <img class="h-auto max-w-full rounded-lg" src="img/5.jpg" alt="" data-aos="fade-up" data-aos-duration="2000" />
           </div>
         </div>
         <div class="grid gap-4">
@@ -192,7 +192,7 @@
             <img class="h-auto max-w-full rounded-lg" src="img/7.jpg" alt="" data-aos="fade-up" data-aos-duration="2000" />
           </div>
           <div>
-            <img class="h-auto max-w-full rounded-lg" src="img/8.jpg" alt="" data-aos="fade-uo" data-aos-duration="2000" />
+            <img class="h-auto max-w-full rounded-lg" src="img/8.jpg" alt="" data-aos="fade-up" data-aos-duration="2000" />
           </div>
         </div>
         <div class="grid gap-4">

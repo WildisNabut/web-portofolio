@@ -11,11 +11,11 @@ module.exports = {
       },
       keyframes: {
         changeBackground: {
-          "0%": { backgroundImage: "url('/src/img/1.avif')" },
-          "25%": { backgroundImage: "url('/src/img/2.avif')" },
-          "50%": { backgroundImage: "url('/src/img/3.avif')" },
-          "75%": { backgroundImage: "url('/src/img/4.avif')" },
-          "100%": { backgroundImage: "url('/src/img/5.avif')" },
+          "0%": { backgroundImage: "url('img/1.avif')" },
+          "25%": { backgroundImage: "url('img/2.avif')" },
+          "50%": { backgroundImage: "url('img/3.avif')" },
+          "75%": { backgroundImage: "url('img/4.avif')" },
+          "100%": { backgroundImage: "url('img/5.avif')" },
         },
       },
       fontFamily: {

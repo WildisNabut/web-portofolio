@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const background = document.getElementById("background");
 
   // Daftar gambar
-  const images = ["/src/img/1.avif", "/src/img/.avif", "/src/img/3.avif", "/src/img/4.avif", "/src/img/5.avif"];
+  const images = ["img/1.avif", "img/2.avif", "img/3.avif", "img/4.avif", "img/5.avif"];
 
   let currentIndex = 0;
 
