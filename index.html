@@ -20,7 +20,7 @@
       class="fixed top-0 w-full transition-all duration-300 z-50"
     >
       <div class="container mx-auto px-4 flex justify-between items-center h-16">
-        <h1 class="text-4xl font-poppins font-bold dark:text-white">Wil<span class="text-orange-500">dis</span></h1>
+        <h1 class="text-4xl font-poppins font-bold dark:text-white text-blue-300">Wil<span class="text-orange-500">dis</span></h1>
         <nav class="hidden md:flex space-x-6 dark:text-white">
           <a href="#home" class="menu hover:text-orange-500">Home</a>
           <a href="#about" class="menu hover:text-orange-500">Tentang</a>
@@ -56,7 +56,7 @@
             <div class="absolute hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 bottom-full mb-2 left-1/2 transform -translate-x-1/2">Ubah Mode</div>
           </button>
 
-          <button @click="open = !open" class="text-2xl focus:outline-none dark:text-white">☰</button>
+          <button @click="open = !open" class="text-2xl focus:outline-none dark:text-white text-blue-300">☰</button>
           <div
             x-show="open"
             @click.away="open = false"
@@ -92,74 +92,49 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="relative bg-blue-500 text-gray-800 py-20 text-center overflow-hidden">
-      <!-- Background Image -->
-      <div id="background" class="absolute inset-0 z-0 bg-cover bg-center opacity-50 transition-opacity duration-1000" style="background-image: url('img/5.avif')"></div>
-      <!-- Content -->
-      <div class="relative z-10 text-white dark:text-cyan-950">
-        <h2 class="text-xl font-bold mt-6">"kukira kelapa ternyata kolang kaling</h2>
-        <h2 class="text-xl font-bold">kukira kenapa ternyata udah asing"</h2>
-        <span class="w-[100px] h-[2px] block bg-black mx-auto mt-2"></span>
-      </div>
-    </section>
+    <section>
+      <!-- Background Putih (Bagian Atas) -->
+      <div class="absolute top-0 left-0 w-full h-1/4 bg-blue-100" style="background-image: url(/img/sensor-otak.jpg)"></div>
 
-    <section class="relative mx-2">
-      <div class="flex items-center bg-orange-500 text-white px-4 py-2 rounded-lg -mt-11">
-        <!-- Icon -->
-        <img src="img/eko.png" alt="icon" class="w-16 h-16 mr-2 rounded-full" />
-        <span class="font-semibold px-2">
-          <div class="text-left font-bold text-2xl font-dancing">WILDIS EKO Y NABUT</div>
-          <div class="text-left font-semibold font-handwriting">ilmu komputer undana</div>
-          <div class="text-left">
-            <div class="flex space-x-4">
-              <!-- GitHub -->
-              <a href="https://github.com/WildisNabut" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
-                <i class="fab fa-github"></i>
-              </a>
-              <!-- Facebook -->
-              <a href="https://facebook.com/wildisnabut24" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <!-- WhatsApp -->
-              <a href="https://wa.me/6281316627877" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-              <!-- Instagram -->
-              <a href="https://instagram.com/wildisnabut" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <!-- TikTok -->
-              <a href="https://www.tiktok.com/@winabut?_t=8qcbswm0yxQ&_r=1" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800">
-                <i class="fab fa-tiktok"></i>
-              </a>
-            </div>
-          </div>
-        </span>
-      </div>
-    </section>
-
-    <section class="bg-gray-100 flex items-center justify-center pt-20 dark:bg-slate-800">
-      <div class="flex flex-col md:flex-row items-center md:items-start max-w-4xl overflow-hidden">
-        <!-- Bagian Teks -->
-        <div class="p-6 md:w-3/4">
-          <h1 class="text-3xl font-bold text-orange-500 mb-4" data-aos="fade-right" data-aos-duration="2000">Hai, saya Wildis.</h1>
-          <p class="text-gray-700 mb-4 text-justify font-poppins dark:text-white" data-aos="fade-down" data-aos-duration="2000">
-            Saya lahir pada tahun 2003 dan saat ini sedang menempuh pendidikan di Universitas Nusa Cendana dengan jurusan Ilmu Komputer. Di kampus, saya terus mengasah keterampilan teknis saya dan berusaha mempelajari berbagai bidang dalam
-            ilmu komputer, seperti pengembangan perangkat lunak dan kecerdasan buatan.
-          </p>
-          <p class="text-gray-700 font-semibold dark:text-white" data-aos="fade-right" data-aos-duration="2000">Mari jelajahi apa yang bisa menjadi pelajaran</p>
-        </div>
-
-        <!-- Bagian Gambar -->
-        <div class="md:w-1/2 rounded-t-full overflow-hidden border-2 border-black lg:rounded-br-full dark:border-white">
-          <img src="img/eko.png" alt="Tim bekerja" class="w-full h-full object-cover" data-aos="fade-up" data-aos-duration="2000" />
+      <!-- Profil di Tengah -->
+      <div class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+        <!-- Foto Profil -->
+        <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-black">
+          <img src="/img/eko.png" alt="Profile" class="w-full h-full object-cover" />
         </div>
       </div>
     </section>
+
+    <div class="max-w-4xl mx-auto mt-6 pt-64 text-center">
+      <h1 class="font-bold text-2xl">WILDIS EKO Y NABUT.</h1>
+      <p>Ilmu Komputer Undana</p>
+
+      <div class="flex items-center mt-4 mx-auto justify-center">
+        <span class="block w-12 h-[2px] bg-gray-800 pl-4"></span>
+        <span class="ml-2 text-white font-medium bg-yellow-600 rounded-full py-2 px-3">24 </span>
+        <span class="block w-12 h-[2px] bg-gray-800 ml-2"></span>
+      </div>
+
+      <div class="relative w-1/2 lg:w-1/2 h-auto lg:h-1/3 mt-8 rounded-lg overflow-hidden mx-auto">
+        <div class="absolute inset-0 bg-blue-400"></div>
+        <img src="/img/3.jpg" alt="Person" class="w-full h-full object-cover mix-blend-multiply" />
+        <div class="absolute inset-0 flex justify-center items-center text-white text-sm lg:text-2xl font-poppins text-center">"Hidup bukan tentang menunggu badai berlalu, tetapi belajar menari di tengah hujan"</div>
+        hhhdhhdh
+      </div>
+
+      <!-- Bagian Teks -->
+      <div class="p-6 mx-auto">
+        <h1 class="text-3xl font-bold text-orange-500 mb-4" data-aos="fade-right" data-aos-duration="2000">Hai, saya Wildis.</h1>
+        <p class="text-gray-700 mb-4 text-justify font-poppins dark:text-white" data-aos="fade-down" data-aos-duration="2000">
+          Saya lahir pada tahun 2003 dan saat ini sedang menempuh pendidikan di Universitas Nusa Cendana dengan jurusan Ilmu Komputer. Di kampus, saya terus mengasah keterampilan teknis saya dan berusaha mempelajari berbagai bidang dalam
+          ilmu komputer, seperti pengembangan perangkat lunak dan kecerdasan buatan.
+        </p>
+        <p class="text-gray-700 font-semibold dark:text-white" data-aos="fade-right" data-aos-duration="2000">Mari jelajahi apa yang bisa menjadi pelajaran</p>
+      </div>
+    </div>
 
     <!-- galery -->
-    <section class="bg-gray-100 dark:bg-gray-800 py-20 px-6 dark:text-white">
+    <section id="gallery" class="bg-gray-100 dark:bg-gray-800 py-20 px-6 dark:text-white">
       <h2 class="text-3xl font-bold text-center mb-6 underline">Gallery</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="grid gap-4">
@@ -227,7 +202,7 @@
             class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"
           />
           <a href="#" class="mt-6 block font-bold text-gray-900 dark:text-gray-100">
-            <span class="absolute inset-0 z-10 dark:text-gray-100" aria-hidden="true"></span>
+            <span class="absolute inset-0 z-10 dark:text-gray-100 lg:text-4xl" aria-hidden="true"></span>
             SMP N 7 AOT
           </a>
           <p aria-hidden="true" class="mt-1 dark:text-gray-100">2016 s.d 2019</p>
@@ -239,7 +214,7 @@
             class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"
           />
           <a href="https://maps.app.goo.gl/CuMdRBZXXpNeXu518" class="mt-6 block font-bold text-gray-900 dark:text-gray-100">
-            <span class="absolute inset-0 z-10 dark:text-gray-100" aria-hidden="true" target="_blank"></span>
+            <span class="absolute inset-0 z-10 dark:text-gray-100 lg:text-4xl" aria-hidden="true" target="_blank"></span>
             SMA N 1 AOT
           </a>
           <p aria-hidden="true" class="mt-1 dark:text-gray-100">2019 s.d 2022</p>
