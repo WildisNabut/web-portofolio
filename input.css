@@ -43,3 +43,25 @@
   left: 0;
   width: 100%;
 }
+
+@keyframes borderChange {
+  0% {
+    border-color: red;
+  }
+  25% {
+    border-color: blue;
+  }
+  50% {
+    border-color: green;
+  }
+  75% {
+    border-color: yellow;
+  }
+  100% {
+    border-color: purple;
+  }
+}
+
+.animate-border {
+  animation: borderChange 5s infinite;
+}

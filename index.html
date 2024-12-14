@@ -30,7 +30,6 @@
             <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
             </svg>
-
             <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" class="hidden h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
               <path
                 d="M10 1.25a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75zM10 15.25a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75zM3.221 4.471a.75.75 0 011.06 0l1.06 1.06a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM14.659 15.909a.75.75 0 011.06 0l1.06 1.06a.75.75 0 11-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM1.25 10a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5A.75.75 0 011.25 10zM15.25 10a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5a.75.75 0 01-.75-.75zM3.221 15.909a.75.75 0 011.06 0l1.06 1.06a.75.75 0 11-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM14.659 4.471a.75.75 0 011.06 0l1.06 1.06a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zM10 5a5 5 0 100 10A5 5 0 0010 5z"
@@ -40,8 +39,6 @@
         </nav>
         <!-- Hamburger Menu -->
         <div x-data="{ open: false }" class="md:hidden">
-          <!-- Tombol Toggle Dark Mode -->
-          <!-- Tombol Toggle Dark Mode -->
           <button id="darkModeToggle" onclick="toggleDarkMode()" class="text-orange-400 dark:text-white p-1 rounded-full border-2 border-orange-400 dark:border-white relative">
             <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
@@ -104,6 +101,7 @@
         </div>
       </div>
     </section>
+
     <section class="bg-gray-100 dark:bg-gray-800">
       <div class="max-w-4xl mx-auto mt-6 pt-64 text-center dark:bg-gray-800 dark:text-white">
         <h1 class="font-bold text-2xl">WILDIS EKO Y NABUT.</h1>
@@ -111,18 +109,33 @@
 
         <div class="flex items-center mt-4 mx-auto justify-center">
           <span class="block w-12 h-[2px] bg-gray-800 dark:bg-white pl-4"></span>
-          <span class="ml-2 text-white font-medium bg-yellow-600 rounded-full py-2 px-3">24 </span>
+          <span class="ml-2 text-white font-medium bg-yellow-600 rounded-full py-2 px-3 border-4 animate-border">24 </span>
           <span class="block w-12 h-[2px] bg-gray-800 dark:bg-white ml-2"></span>
         </div>
-        <div class="mx-auto justify-center flex items-center pt-4">
-          <audio controls src="img/HIGHER_GROUND(48k) - Copy.mp3" class="bg-white rounded-lg"></audio>
-        </div>
-        <div class="relative w-1/2 lg:w-1/2 h-auto lg:h-1/3 mt-8 rounded-lg overflow-hidden mx-auto">
+        <div class="relative w-1/2 lg:w-1/2 h-auto lg:h-1/3 mt-8 rounded-lg overflow-hidden mx-auto border-2 animate-border">
           <div class="absolute inset-0 bg-blue-400"></div>
           <img src="img/3.jpg" alt="Person" class="w-full h-full object-cover mix-blend-multiply" />
           <div class="absolute inset-0 flex justify-center items-center text-white text-sm lg:text-2xl font-poppins text-center">"Hidup bukan tentang menunggu badai berlalu, tetapi belajar menari di tengah hujan"</div>
         </div>
 
+        <div class="flex justify-center items-center text-white mt-4">
+          <div class="max-w-md w-full bg-gray-800 rounded-lg shadow-lg p-6 border-2 animate-border">
+            <!-- Header Section -->
+            <div class="flex space-x-4">
+              <img src="img/10.jpg" alt="Album Cover" class="w-16 h-16 rounded-lg object-cover" />
+              <div class="text-left">
+                <h2>Single</h2>
+                <p class="text-4xl font-bold text-gray-400">Memories</p>
+                <p class="text-xs font-semibold">Maroon 5 <span>•2019• 1 song, 3 min 26 sec</span></p>
+              </div>
+            </div>
+
+            <!-- Audio Player -->
+            <div class="flex justify-center items-center mt-6">
+              <audio controls src="img/Maroon_5_-_Memories_(Cover)_with_MVTCHES(256k).mp3" class="bg-white rounded-lg w-full"></audio>
+            </div>
+          </div>
+        </div>
         <!-- Bagian Teks -->
         <div class="p-6 mx-auto dark:bg-gray-800">
           <h1 class="text-3xl font-bold text-orange-500 mb-4" data-aos="fade-right" data-aos-duration="2000">Hai, saya Wildis.</h1>
@@ -185,31 +198,7 @@
         </div>
       </div>
     </section>
-    <div class="bg-[#f2f3fa] flex justify-center items-center min-h-screen">
-      <card class="bg-white w-full max-w-[768px] flex justify-start items-center p-8 relative max-h-40 shadow-sm rounded-md">
-        <img src="https://a10.gaanacdn.com/gn_img/albums/P7m3GvNKqx/7m3GVZx5Kq/size_l.jpg" class="rounded-xl w-[170px] mt-16" />
-        <p class="pl-9 text-2xl font-semibold grow">Roxette<br /><span class="text-lg font-normal">Sleeping in my car</span></p>
-        <span class="clear-left rounded-full bg-[#eff0f9] p-4 cursor-pointer group [&_*]:transition-all [&_*]:duration-150 [&_*]:ease-in">
-          <span class="px-3 py-3 block bg-white rounded-full shadow-md group-hover:bg-rose-600">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="group-hover:fill-white group-hover:stroke-white"
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="#7e9cff"
-              fill="#7e9cff"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M7 4v16l13 -8z" />
-            </svg>
-          </span>
-        </span>
-      </card>
-    </div>
+
     <section class="bg-gray-100 pt-10 dark:bg-gray-800">
       <h1 class="text-center text-black dark:text-gray-100 font-bold pb-6 text-3xl underline">Riwayat Pendidikan</h1>
       <div class="grid grid-cols-3 gap-x-4 mx-4">
@@ -265,6 +254,7 @@
           <div class="flex flex-col items-center space-y-4">
             <h2 class="text-lg font-bold">Media Sosial</h2>
             <span class="w-8 h-[2px] block bg-black justify-center"></span>
+            <a href="https://github.com/WildisNabut" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800 h-10 w-10"> </a>
             <div class="flex space-x-4">
               <!-- GitHub -->
               <a href="https://github.com/WildisNabut" target="_blank" class="text-white hover:text-gray-300 dark:text-gray-800 h-10 w-10">
